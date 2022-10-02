@@ -1,0 +1,42 @@
+package com.co.usuarios.models.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.co.usuarios.models.dao.IMaestroUsuariosDAO;
+import com.co.usuarios.models.entity.MaestroUsuarios;
+
+public class MaestroUsuariosImpl implements IMaestroUsuarios{
+	
+	@Autowired
+	IMaestroUsuariosDAO maestroUsuariosDAO;
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<MaestroUsuarios> findAll() {
+		// TODO Auto-generated method stub
+		return (List<MaestroUsuarios>) maestroUsuariosDAO.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public MaestroUsuarios findById(Long idUsuario) {
+		// TODO Auto-generated method stub
+		return maestroUsuariosDAO.findById(idUsuario).orElse(null);
+	}
+
+	@Override
+	public MaestroUsuarios findByLogginPassword(String loggin, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void guardar(MaestroUsuarios maestroUsuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

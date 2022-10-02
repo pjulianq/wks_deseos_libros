@@ -1,0 +1,5 @@
+package com.co.usuarios.models.entity;
+
+public class MaestroUsuarios {
+
+}

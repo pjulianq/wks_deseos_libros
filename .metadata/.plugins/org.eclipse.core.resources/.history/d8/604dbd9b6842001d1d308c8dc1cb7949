@@ -1,0 +1,14 @@
+package com.co.usuarios.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.co.usuarios.models.service.IMaestroUsuariosService;
+
+@RestController
+public class UsuariosController {
+	
+	@Autowired
+	private IMaestroUsuariosService maestroUsuariosService;
+
+}

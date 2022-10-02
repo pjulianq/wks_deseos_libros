@@ -1,0 +1,14 @@
+package com.co.usuarios.models.service;
+
+import java.util.List;
+
+import com.co.usuarios.models.entity.MaestroUsuarios;
+
+public interface IMaestroUsuariosService {
+	
+	public List<MaestroUsuarios> findAll();
+	public MaestroUsuarios findById(Long idUsuario);
+	public MaestroUsuarios findByLogginPassword(String loggin, String password);
+	public void guardar(MaestroUsuarios maestroUsuario);
+
+}
