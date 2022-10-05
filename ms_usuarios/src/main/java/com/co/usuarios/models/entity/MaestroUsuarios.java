@@ -21,6 +21,12 @@ public class MaestroUsuarios implements Serializable {
     
     @Column(name = "S_NOMBRE")
 	private String sNombre;
+    
+    @Column(name = "S_LOGGIN")
+	private String sLoggin;  
+    
+    @Column(name = "S_PASSWORD")
+	private String sPassword;    
 
 	public Long getIdUsuario() {
 		return idUsuario;
@@ -36,6 +42,24 @@ public class MaestroUsuarios implements Serializable {
 
 	public void setsNombre(String sNombre) {
 		this.sNombre = sNombre;
+	}
+
+	public String getsLoggin() {
+		return sLoggin;
+	}
+
+	public void setsLoggin(String sLoggin) {
+		this.sLoggin = sLoggin;
+	}
+
+	public String getsPassword() {
+		return sPassword;
+	}
+
+	public void setsPassword(String sPassword) {
+		this.sPassword = sPassword;
 	} 
+	
+	
 
 }

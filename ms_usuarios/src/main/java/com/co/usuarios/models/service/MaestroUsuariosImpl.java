@@ -18,20 +18,18 @@ public class MaestroUsuariosImpl implements IMaestroUsuariosService{
 	@Override
 	@Transactional(readOnly = true)
 	public List<MaestroUsuarios> findAll() {
-		// TODO Auto-generated method stub
 		return (List<MaestroUsuarios>) maestroUsuariosDAO.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
 	public MaestroUsuarios findById(Long idUsuario) {
-		// TODO Auto-generated method stub
 		return maestroUsuariosDAO.findById(idUsuario).orElse(null);
 	}
 
 	@Override
-	public MaestroUsuarios findByLogginPassword(String loggin, String password) {
-		return null;
+	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password) {
+		return maestroUsuariosDAO.obtenerUsuarioLogginPassword(loggin, password);
 	}
 
 	@Override

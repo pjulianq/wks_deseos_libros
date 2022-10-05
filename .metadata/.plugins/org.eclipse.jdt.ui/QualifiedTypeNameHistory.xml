@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.validation.Errors"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.web.models.service.ClienteServices"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpHeaders"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.MaestroUsuarios"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.ListaDeLibros"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="com.co.libros.models.dao.IListaDeLibrosDAO"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.co.libros.models.service.IListaDeLibrosService"/>
+    <fullyQualifiedTypeName name="com.co.libros.models.entity.ListaDeLibros"/>
+</qualifiedTypeNameHistroy>

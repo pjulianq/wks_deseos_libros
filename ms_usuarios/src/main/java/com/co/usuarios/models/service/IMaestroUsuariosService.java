@@ -8,7 +8,7 @@ public interface IMaestroUsuariosService {
 	
 	public List<MaestroUsuarios> findAll();
 	public MaestroUsuarios findById(Long idUsuario);
-	public MaestroUsuarios findByLogginPassword(String loggin, String password);
+	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password);
 	public void guardar(MaestroUsuarios maestroUsuario);
 
 }
