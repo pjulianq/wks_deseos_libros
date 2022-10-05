@@ -1,0 +1,52 @@
+package com.co.lista_deseos.web.models.service;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service("serviceRestTemplate")
+@Slf4j
+public class ClienteServicesImpl implements ClienteServices{
+	
+	private final String basepath="http://localhost:8090/";
+	
+	
+	@Autowired
+	RestTemplate clienteRest;
+
+	@Override
+	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password) {
+		MaestroUsuarios usuario = clienteRest.getForObject(basepath+"/basepath/usuarios/obtenerUsuarioLogginPassword/"+loggin+"/"+password, MaestroUsuarios.class);
+		return usuario;
+	}
+
+	
+	@Override
+	public void guardarUsuario(MaestroUsuarios usuario) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		URI url;
+		try {
+			url = new URI(basepath+"servicio-usuarios/usuarios/guardarUsuario/");
+			HttpEntity<MaestroUsuarios> requestEntity = new HttpEntity<>(usuario, headers);
+			RestTemplate restTemplate = new RestTemplate();
+			URI uri = restTemplate.postForLocation(url, requestEntity);
+			System.out.println(uri.getPath());				
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+	}	
+	
+	
+
+}

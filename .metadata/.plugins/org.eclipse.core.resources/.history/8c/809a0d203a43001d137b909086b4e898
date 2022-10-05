@@ -1,0 +1,5 @@
+package com.co.lista_deseos.clients.modelsdto;
+
+public class MaestroUsuarios {
+
+}

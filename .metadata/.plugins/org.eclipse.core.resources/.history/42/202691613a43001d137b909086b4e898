@@ -1,0 +1,33 @@
+package com.co.lista_deseos.clients.modelsdto;
+
+import java.io.Serializable;
+
+public class MaestroUsuarios implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * 
+	 */
+	private Long idUsuario;
+	private String sNombre;
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	public String getsNombre() {
+		return sNombre;
+	}
+	public void setsNombre(String sNombre) {
+		this.sNombre = sNombre;
+	}
+	
+	
+	
+
+}

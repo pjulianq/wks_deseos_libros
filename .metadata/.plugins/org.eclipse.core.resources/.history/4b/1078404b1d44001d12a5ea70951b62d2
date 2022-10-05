@@ -1,0 +1,36 @@
+package com.co.lista_deseos.clients.modelsdto;
+
+import java.io.Serializable;
+
+public class ListaDeLibros implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Long idListaLibros;
+	private MaestroUsuarios idMaestroUsuario;
+	private String sNombreLista;
+	public Long getIdListaLibros() {
+		return idListaLibros;
+	}
+	public void setIdListaLibros(Long idListaLibros) {
+		this.idListaLibros = idListaLibros;
+	}
+	public MaestroUsuarios getIdMaestroUsuario() {
+		return idMaestroUsuario;
+	}
+	public void setIdMaestroUsuario(MaestroUsuarios idMaestroUsuario) {
+		this.idMaestroUsuario = idMaestroUsuario;
+	}
+	public String getsNombreLista() {
+		return sNombreLista;
+	}
+	public void setsNombreLista(String sNombreLista) {
+		this.sNombreLista = sNombreLista;
+	}
+	
+	
+
+}

@@ -1,0 +1,5 @@
+package com.co.libros.models.service;
+
+public interface IListaDeLibrosService {
+
+}

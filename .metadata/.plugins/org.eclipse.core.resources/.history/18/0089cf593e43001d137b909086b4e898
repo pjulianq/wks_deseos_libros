@@ -1,0 +1,31 @@
+package com.co.lista_deseos.web.models.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service("serviceRestTemplate")
+@Slf4j
+public class ClienteServicesImpl implements ClienteServices{
+	
+	
+	@Autowired
+	RestTemplate clienteRest;
+
+	@Override
+	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password) {
+		return null;
+	}
+
+	@Override
+	public void registrarUsuario(MaestroUsuarios entidad) {
+		
+	}
+	
+	
+
+}

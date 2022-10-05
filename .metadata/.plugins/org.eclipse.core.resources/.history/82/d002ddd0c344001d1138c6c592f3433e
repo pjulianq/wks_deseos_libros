@@ -1,0 +1,31 @@
+package com.co.lista_deseos.clients.modelsdto;
+
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class GBWrapper implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int totalItems;
+	private GBItemsWrapper[] items;
+	public int getTotalItems() {
+		return totalItems;
+	}
+	public void setTotalItems(int totalItems) {
+		this.totalItems = totalItems;
+	}
+	public GBItemsWrapper[] getItems() {
+		return items;
+	}
+	public void setItems(GBItemsWrapper[] items) {
+		this.items = items;
+	}
+	
+	
+
+}

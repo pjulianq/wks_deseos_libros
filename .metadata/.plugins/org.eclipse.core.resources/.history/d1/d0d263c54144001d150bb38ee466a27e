@@ -1,0 +1,10 @@
+package com.co.lista_deseos.web.models.service;
+
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+
+public interface ClienteServices {
+	
+	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password);
+	public void guardarUsuario(MaestroUsuarios entidad);
+
+}

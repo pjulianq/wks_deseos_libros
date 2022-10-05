@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Registro de usuario</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+       
+        <h2>Registrarme</h2>
+        
+        <form th:action="@{/guardarUsuario}" method="post" th:object="${maestroUsuarios}">
+            
+            
+	            <input type="hidden" name ="idUsuario" th:field="*{idUsuario}"/>
+	            
+	            
+	            <label for="nombre">Nombre</label></br>
+	            <input type="text" name="nombre" th:field="*{sNombre}"/>
+	            <span th:if="${#fields.hasErrors('sNombre')}" th:errors="*{sNombre}">Error Nombre</span>
+	            <br/>
+	            <label for="loggin">Loggin</label></br>
+	            <input type="email" name="email" th:field="*{sLoggin}"/>
+	            <br>
+	            <label for="password">Password</label></br>
+	            <input type="password" password="email" th:field="*{sPassword}"/>	            
+	            <br/>
+	            <br/>
+            
+            
+            <input type="submit" name ="guardar"  th:value="Guardar"/>    
+            <br>
+            <a th:href="@{/api-web-libreria/libreria}">Salir</a>
+           
+        </form>
+        
+    
+    </body>
+</html>

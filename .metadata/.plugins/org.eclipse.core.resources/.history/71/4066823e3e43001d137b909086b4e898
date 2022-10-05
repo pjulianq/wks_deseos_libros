@@ -1,0 +1,25 @@
+package com.co.lista_deseos.web.models.service;
+
+import org.springframework.stereotype.Service;
+
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service("serviceRestTemplate")
+@Slf4j
+public class ClienteServicesImpl implements ClienteServices{
+
+	@Override
+	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password) {
+		return null;
+	}
+
+	@Override
+	public void registrarUsuario(MaestroUsuarios entidad) {
+		
+	}
+	
+	
+
+}

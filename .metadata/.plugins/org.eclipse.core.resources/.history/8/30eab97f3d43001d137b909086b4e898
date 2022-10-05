@@ -1,0 +1,9 @@
+package com.co.lista_deseos.web.models.service;
+
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+
+public interface ClienteServices {
+	
+	public void registrarUsuario(MaestroUsuarios entidad);
+
+}

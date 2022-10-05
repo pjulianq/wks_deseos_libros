@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Deseos de libros</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    
+		 
+    
+	    <form th:action="@{/usuarioValidar}" method="post">
+		    <label for="nombre" th:text="Loggin"></label>
+		    <input type="text" name="identificacion" id="identificacion"/>
+		    <input type="submit" name ="ingresar"  th:value="#{logging.ingresar}"/>
+	    </form>
+	    
+	    
+    
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Principal</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+    	
+    	<div>
+    		<h2>Mis listas de desesos</h3>
+				<a th:href="@{/editarListaLibros}">Agregar nueva lista</a>
+				</br></br>
+				<table border="1">
+	               
+	            </table>      		
+    		
+    	</div>
+    	
+    	</br>
+    	<a th:href="@{/api-web-libreria/libreria}">Salir</a>
+    </body>
+</html>

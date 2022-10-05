@@ -1,0 +1,13 @@
+package com.co.libros;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@EnableEurekaClient
+@SpringBootApplicationpublic class MsLibrosApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MsLibrosApplication.class, args);
+	}
+
+}

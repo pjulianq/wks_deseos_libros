@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>[[#{plantilla.titulo}]]</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>    
+        <h2>[[#{registrarusuario.titulo}]]</h2>
+        
+        <form th:action="@{/guardarUsuario}" method="post" th:object="${admUsuario}">
+            
+            
+	            <input type="hidden" name ="idUsuario" th:field="*{idUsuario}"/>
+	            
+	            
+	            <label for="nombre">[[#{transversal.nombre}]]</label></br>
+	            <input type="text" name="nombre" th:field="*{sNombre}"/>
+	            <span th:if="${#fields.hasErrors('sNombre')}" th:errors="*{sNombre}">Error Nombre</span>
+	            <br/>
+	            <label for="email">[[#{transversal.email}]]</label></br>
+	            <input type="email" name="email" th:field="*{sEmail}"/>
+	            <br/>
+	            <label for="nombre">[[#{transversal.numeroidentificacion}]]</label></br>
+	            <input type="text" name="identificacion" th:field="*{sIdentificacion}"/>  
+	             <span th:if="${#fields.hasErrors('sIdentificacion')}" th:errors="*{sIdentificacion}">Error identificación</span>
+	            <br/>
+	            <label for="nombre">[[#{transversal.telefono}]]</label></br>
+	            <input type="text" name="telefono" th:field="*{sTelefono}"/>   
+	            <br/>
+	            <label for="nombre">[[#{transversal.tiporol}]]</label></br>
+	            <input type="number" name="tiporol" th:field="*{nTipoRol}"/>
+	            <br/>
+            
+            
+            <input type="submit" name ="guardar"  th:value="#{transversal.guardar}"/>    
+            
+            <!-- Formulario Doers-->
+            <div  th:if="*{nTipoRol !=null and nTipoRol==1}" >
+            	<p>[[#{registrarusuario.ustedescolbarodador}]]</p>
+             	 <a th:href="@{/formulariodoer/}+*{idUsuario}">[[#{transversal.acceder}]]</a>
+            </div>
+            
+            <!-- Formulario Cliente-->
+            <div  th:if="*{nTipoRol !=null and nTipoRol==2}" >
+            	<p>[[#{registrarusuario.ustedescliente}]]</p>
+            	<a th:href="@{/formulariocliente/}+*{idUsuario}">[[#{transversal.acceder}]]</a>
+             
+            </div>
+            <!-- Formulario Cliente-->
+            <div  th:if="*{nTipoRol !=null and nTipoRol==3}" >
+            	<p>[[#{registrarusuario.ustedesadministrador}]]</p>
+            	<a th:href="@{/formularioadministrador/}+*{idUsuario}">[[#{transversal.acceder}]]</a>
+             
+            </div>                             
+            
+                                             
+            
+             <br/>
+            
+            <a th:href="@{/clianddo}">[[#{transversal.salir}]]</a>
+           
+        </form>
+        
+    	<footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>

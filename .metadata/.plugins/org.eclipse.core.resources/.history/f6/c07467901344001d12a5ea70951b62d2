@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Principal</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+    	 <form th:action="@{/api-web-libreria/guardarListaLibros}" method="post">
+    	<div>
+    		<h2>Lista de deseos</h3>
+    		<br>
+    			
+	    			<input type="hidden" name ="idUsuario" th:field="${listaDeLibros.idListaLibros}"/>
+	    		
+		            <label for="nombre">Nombre Lista</label>
+		            <input type="text" name="nombre" th:field="${listaDeLibros.sNombreLista}" id="nombre"/>    
+		            
+		             <input type="submit" name ="guardarListaLibros"  th:value="Guardar"/>		
+	    			<br>
+	    			<br>
+    			
+    			
+    			<label for="nombre">Libros asociados a la lista</label>
+    		
+				<table border="1">
+	               <tr>
+	               	<td>Nombre Libro</td>
+	               </tr>
+	               <!--
+	                <tr th:each="servicio : ${lstDetUsuarioServicios}">
+	                    <td th:text="${servicio.idServicio.sDescripcion}"/>
+	                </tr>
+	                -->
+	            </table> 
+	            
+	            <br>
+	            <label for="nombre">Buscar y asociar libro</label>     		
+    		
+    	</div>
+    	
+    	</br>
+    	<a th:href="@{/api-web-libreria/libreria}">Salir</a>
+    	
+    	 </form>
+    </body>
+</html>
