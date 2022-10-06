@@ -56,7 +56,11 @@ Creamos la red
 Levantamos una instancia de la imagen
   docker run -p 8761:8761 --name servicio-eureka-server --network networklibrary servicio-eureka-server:v1
   
-Probamos que la instancia allá iniciado de manera correcta (miramos el log o probamos con http://localhost:8761/)  
+Probamos que la instancia alla iniciado de manera correcta (miramos el log o probamos con http://localhost:8761/)  
+
+Hacemos lo mismo para los demás microservicios:
+
+
   
 
 Dí cómo será ese paso
