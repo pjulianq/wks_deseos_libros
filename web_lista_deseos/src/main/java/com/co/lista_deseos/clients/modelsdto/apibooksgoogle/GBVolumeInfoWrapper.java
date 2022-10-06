@@ -24,6 +24,17 @@ public class GBVolumeInfoWrapper implements Serializable{
 	private String[] categories;
 	private Map<String, String> imageLinks = new HashMap<String, String>();
 	private String language;
+	private String id;
+	private String autorsString;
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -85,7 +96,11 @@ public class GBVolumeInfoWrapper implements Serializable{
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	
-	
+	public String getAutorsString() {
+		return autorsString;
+	}
+	public void setAutorsString(String autorsString) {
+		this.autorsString = autorsString;
+	}
 
 }

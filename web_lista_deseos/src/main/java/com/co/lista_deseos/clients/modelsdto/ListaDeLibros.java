@@ -12,6 +12,12 @@ public class ListaDeLibros implements Serializable{
 	private Long idListaLibros;
 	private Long idMaestroUsuario;
 	private String sNombreLista;
+	
+	
+	
+	
+	
+	
 	public Long getIdListaLibros() {
 		return idListaLibros;
 	}
@@ -31,7 +37,6 @@ public class ListaDeLibros implements Serializable{
 	public void setsNombreLista(String sNombreLista) {
 		this.sNombreLista = sNombreLista;
 	}
-	
-	
+
 
 }

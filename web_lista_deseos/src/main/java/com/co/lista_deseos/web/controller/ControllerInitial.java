@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.co.lista_deseos.clients.modelsdto.LibroListaLibros;
 import com.co.lista_deseos.clients.modelsdto.ListaDeLibros;
 import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBVolumeInfoWrapper;
 import com.co.lista_deseos.web.models.service.ClienteServices;
 
 /**
@@ -23,7 +25,17 @@ import com.co.lista_deseos.web.models.service.ClienteServices;
  * Controlador Inicial de la aplicación web, se encarga de las acciones
  */
 @Controller
-public class ControladorInicial {
+public class ControllerInitial {
+	
+	/*
+	 @ModelAttribute("contador")
+	  public int getContador() {
+	    
+	    return 5;
+	  }
+	 */
+	
+	private Long idUsuario, idListaLibros;
 	
 	@Autowired
 	ClienteServices clienteServices;	
@@ -43,7 +55,6 @@ public class ControladorInicial {
     	if(usuario==null)
     		return "logging";
     	model.addAttribute("maestroUsuarios", usuario==null?new MaestroUsuarios():usuario);
-    	
     	consultarListasDeLibrosByUsuario(usuario.getIdUsuario(), model);	
     	return "paginaPrincipal";
     }	
@@ -65,18 +76,54 @@ public class ControladorInicial {
     
 	@GetMapping("/agregarListaLibros/{idUsuario}")
 	public String agregarListaLibros(MaestroUsuarios maestro,Model model) {
-		
 		ListaDeLibros listaDeLibros = new ListaDeLibros();
 		listaDeLibros.setIdMaestroUsuario(maestro.getIdUsuario());
-		
 		model.addAttribute("listaDeLibros",listaDeLibros);
 		return "editarListaLibros";
 	}
 	
+	@GetMapping("/editarListaLibros/{idListaLibros}/{idMaestroUsuario}/{sNombreLista}")
+	public String editarListaLibros(ListaDeLibros listaDeLibros,Model model) {
+		listaDeLibros.setIdMaestroUsuario(listaDeLibros.getIdMaestroUsuario());
+		listaDeLibros.setIdListaLibros(listaDeLibros.getIdListaLibros());
+		listaDeLibros.setsNombreLista(listaDeLibros.getsNombreLista());
+		model.addAttribute("listaDeLibros",listaDeLibros);
+		
+		idUsuario=listaDeLibros.getIdMaestroUsuario();
+		idListaLibros = listaDeLibros.getIdListaLibros();
+		
+		var lista = clienteServices.obtenerLibrosDeLista(listaDeLibros.getIdListaLibros());
+    	model.addAttribute("librosDeLista", lista);			
+		
+	
+		return "editarListaLibros";
+	}	
+	
+	@GetMapping("/asociarLibroLista/{id}/{title}/{autorsString}/{publisher}")
+    public String asociarLibroLista(@Valid GBVolumeInfoWrapper gBVolumeInfoWrapper,Errors errores, Model model){
+        if(errores.hasErrors()){
+            return "paginaPrincipal";
+        }
+        LibroListaLibros libro = new LibroListaLibros();
+        libro.setsAutorLibro(gBVolumeInfoWrapper.getAutorsString());
+        libro.setsEditorialLibro(gBVolumeInfoWrapper.getPublisher());
+        libro.setsIdLibroApiGoogle(gBVolumeInfoWrapper.getId());
+        libro.setsNombreLibro(gBVolumeInfoWrapper.getTitle());
+        libro.setIdListaLibros(idListaLibros);
+        clienteServices.guardarLibroEnLista(libro);
+        
+        MaestroUsuarios usuario = new MaestroUsuarios();
+        usuario.setIdUsuario(idUsuario);
+        model.addAttribute("maestroUsuarios",usuario);
+        consultarListasDeLibrosByUsuario(idUsuario, model);
+        return "paginaPrincipal";
+	}
+	
+
     @PostMapping("/guardarListaLibros")
     public String guardarListaLibros(@Valid ListaDeLibros listaDeLibros,Errors errores, Model model){
         if(errores.hasErrors()){
-            return "openRegistroUsuario";
+            return "paginaPrincipal";
         }
         clienteServices.guardarListaDeLibros(listaDeLibros);
         
@@ -96,8 +143,11 @@ public class ControladorInicial {
 	
 	
 	@RequestMapping(value="/guardarListaLibros", method=RequestMethod.POST, params="action=buscarLibros")
-	public String buscarLibros(@Valid ListaDeLibros listaDeLibros,Model model,@RequestParam("nombreLibro") String nombreLibro) {
-		return "paginaPrincipal";
+	public String buscarLibros(@Valid ListaDeLibros listaDeLibros,Model model,@RequestParam("nombreLibro") String nombreLibro,@RequestParam("autorLibro") String autorLibro) {
+		var listaLibrosGoogle = clienteServices.obtenerLibrosGoole(nombreLibro, autorLibro);
+		model.addAttribute("listaDeLibros",listaDeLibros);
+		model.addAttribute("listaLibrosGoogle",listaLibrosGoogle);
+		return "editarListaLibros";
 	}
 	
 	private void consultarListasDeLibrosByUsuario(Long idUsuario,Model model) {
@@ -106,10 +156,24 @@ public class ControladorInicial {
 	}
 	
 	
+    @GetMapping("/eliminarLibro") 
+    public String eliminarServicio(LibroListaLibros entidad,Model model){
+    	clienteServices.eliminarLibro(entidad);
+    	MaestroUsuarios usuario = new MaestroUsuarios();
+        usuario.setIdUsuario(idUsuario);
+        model.addAttribute("maestroUsuarios",usuario);
+        consultarListasDeLibrosByUsuario(idUsuario, model);    	
+		return "paginaPrincipal";
+    }  
+    
+    @GetMapping("/eliminarLista") 
+    public String eliminarLista(ListaDeLibros entidad,Model model){
+    	clienteServices.eliminarLista(entidad);
+    	MaestroUsuarios usuario = new MaestroUsuarios();
+        usuario.setIdUsuario(idUsuario);
+        model.addAttribute("maestroUsuarios",usuario);
+        consultarListasDeLibrosByUsuario(idUsuario, model);    	
+		return "paginaPrincipal";
+    }      
 	
-    
-    
-    
-    
-    
 }
