@@ -11,5 +11,7 @@ public interface IListaDeLibrosDAO extends CrudRepository<ListaDeLibros,Long>{
 	
 	@Query("select u from ListaDeLibros u where u.idMaestroUsuario = ?1")
 	List<ListaDeLibros> obtenerListaDeLibrosByUsuario(Long idUsuario);
+	
+
 
 }

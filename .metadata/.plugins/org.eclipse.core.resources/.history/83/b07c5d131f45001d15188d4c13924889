@@ -1,0 +1,23 @@
+package com.co.libros.models.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.co.libros.models.dao.ILibroListaLibrosDAO;
+import com.co.libros.models.entity.LibroListaLibros;
+
+@Service
+public class LibroListaLibrosImpl implements ILibroListaLibrosService {
+
+	@Autowired
+	ILibroListaLibrosDAO libroListaLibrosService;
+	
+	@Override
+	public void guardar(LibroListaLibros libro) {
+		libroListaLibrosService.save(libro);
+		
+	}
+	
+	
+
+}

@@ -1,2 +1,6 @@
 1664909092186	Rename type 'ControllerLibros'
 1664969689652	Rename type 'LibrosController'
+1665009923399	Rename type 'LibrosListaLibros'
+1665010738305	Rename type 'ILibroListaLibros'
+1665010781628	Rename type 'ILibroListaLibros'
+1665011466132	Copy compilation unit

@@ -1,0 +1,9 @@
+package com.co.libros.models.service;
+
+import com.co.libros.models.entity.ListaDeLibros;
+
+public interface ILibroListaLibrosService {
+	
+	public void guardar(ListaDeLibros listaDelibros);
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Principal</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+    
+    <input type="text" name ="idUsuario" th:field="${maestroUsuarios.idUsuario}"/>
+    	
+    	<div>
+    		<h2>Mis listas de desesos</h3>
+				
+				</br></br>
+				<table border="1">
+	                <tr th:each="lista : ${listasLibrosUsuarios}">
+	                    <td th:text="${lista.sNombreLista}" /> 
+                    	
+                    	<td><a th:href="@{/api-web-libreria/editarListaLibros/{idListaLibros}(idListaLibros=${lista.idListaLibros})  }"  th:text="Eliminar"></td>
+                    	
+                    	                   
+	                </tr>
+	            </table>  
+	            </br>
+	            </br>
+				<a th:href="@{/api-web-libreria/agregarListaLibros/}+*{maestroUsuarios}">Agregar nueva lista</a>	            
+	            		
+    		
+    	</div>
+    	
+    	</br>
+    	<a th:href="@{/api-web-libreria/libreria}">Salir</a>
+    </body>
+</html>

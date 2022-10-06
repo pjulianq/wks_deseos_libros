@@ -1,0 +1,11 @@
+package com.co.libros.models.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.co.libros.models.entity.LibroListaLibros;
+
+public interface ILibroListaLibros extends CrudRepository<LibroListaLibros, Long>{
+	
+	public void guardar(LibroListaLibros libro);
+
+}

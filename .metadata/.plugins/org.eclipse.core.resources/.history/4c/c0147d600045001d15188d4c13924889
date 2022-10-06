@@ -1,0 +1,5 @@
+package com.co.libros.models.entity;
+
+public class LibroListaLibros {
+
+}

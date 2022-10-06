@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <title>Principal</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+    	<form th:action="@{/api-web-libreria/guardarListaLibros}" method="post" th:object="${listaDeLibros}">
+    		<input type="text" name ="idUsuario" th:field="*{idMaestroUsuario}"/>
+    		<input type="text" name ="idListaLibros" th:field="*{idListaLibros}"/>
+    		<div>
+    			<h2>Lista de deseos</h2>
+    			<br>
+    			<label for="nombre">Nombre Lista</label>
+		        <input type="text" name="nombre" th:field="${listaDeLibros.sNombreLista}" id="nombre"/> 
+		        <input type="submit" name ="guardarListaLibros"  th:value="Guardar"/>		
+	    		
+	    		<div  th:if="*{idListaLibros !=null and idListaLibros>0}">
+	    		
+		    		<br>
+		    		<br>
+		    		<label for="nombre">Libros asociados a la lista</label>
+		    		<table border="1">
+		    			<tr>
+		               		<td>Nombre Libro</td>
+		               	</tr>
+		            </table> 
+		            <br>
+		            <label for="nombre">Buscar y asociar libro</label>
+		            <div>
+		            	<label for="nombreLibro">Nombre Libro</label>
+		            	<input type="text" name="nombreLibro" id="nombreLibro"/>
+		            	</br>
+		            	<label for="autorLibro">Autor Libro</label>
+		            	<input type="text" name="autorLibro" id="autorLibro"/>
+		            	</br></br>	
+		            	<button type="submit" name="action" value="buscarLibros">Buscar</button> 
+		            	</br>
+		            	<table border="1">
+		            		<tr>
+		               			<td>Id</td>
+		               			<td>Título</td>
+		               			<td>Autor</td>
+		               			<td>Editorial</td>
+		               			<td>Asociar</td>
+		               		</tr>
+		                	<tr th:each="libro : ${listaLibrosGoogle}">
+		                    	<td th:text="${libro.id}" />
+		                    	<td th:text="${libro.title}" />
+		                    	<td th:text="${libro.autorsString}"/>
+		                    	<td th:text="${libro.publisher}" />
+		                    	<td><a th:href="@{/api-web-libreria/asociarLibroLista/} + ${libro.id} +'/'+ ${libro.title} +'/'+ ${libro.autorsString} +'/'+ ${libro.publisher}" th:text="Asociar"/></td>
+		                	</tr>
+		            	</table>             	
+		            </div>
+		            
+	    		</div>
+	            
+	            
+	            
+	            
+	            
+	        </div>
+	        </br>
+    		<a th:href="@{/api-web-libreria/libreria}">Salir</a>
+    	</form>
+    </body>
+</html>

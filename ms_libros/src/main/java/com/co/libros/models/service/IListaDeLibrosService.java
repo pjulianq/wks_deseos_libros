@@ -8,5 +8,7 @@ public interface IListaDeLibrosService {
 	
 	public void guardar(ListaDeLibros listaDelibros);
 	public List<ListaDeLibros> obtenerListaDeLibrosByUsuario(Long idUsuario);
-
+	public void eliminar(ListaDeLibros entidad);
+	
+	
 }
