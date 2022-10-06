@@ -5,10 +5,13 @@ Comenzando
 Trataremos de dar instrucciones muy detalladas para poner el aplicativo en funcionamiento en tú ambiente local.
 
 Pre-requisitos 
+
 Java 11 o superior
+
 Docker
 
-Instalación 
+#Instalación 
+
 Clona el proyecto en tú máquina local tomandolo de https://github.com/pjulianq/wks_deseos_libros.git	
 
 El repositorio consta de 5 microservicios:
