@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <title>Principal</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+    	<form th:action="@{/api-web-libreria/guardarListaLibros}" method="post" th:object="${listaDeLibros}">
+    		<input type="hidden" name ="idUsuario" th:field="*{idMaestroUsuario}"/>
+    		<input type="hidden" name ="idListaLibros" th:field="*{idListaLibros}"/>
+    		<div>
+    			<h2>Lista de deseos</h2>
+    			<br>
+    			<label for="nombre">Nombre Lista</label>
+		        <input type="text" name="nombre" th:field="*{sNombreLista}" id="nombre"/> 
+		        <div  th:if="*{idListaLibros ==null or idListaLibros==0}">
+		        	<input type="submit" name ="guardarListaLibros"  th:value="Guardar"/>
+		        </div>		
+	    		
+	    		<div  th:if="*{idListaLibros !=null and idListaLibros>0}">
+	    		
+		    		<br>
+		    		<br>
+		    		<label for="nombre">Libros asociados a la lista</label>
+		    		<table border="1">
+		    			<tr>
+		               		<td>Nombre Libro</td>
+		               		<td>Autor</td>
+		               		<td>Editorial</td>
+		               		<td>Id Google</td>
+		               		<td>Eliminar</td>
+		               	</tr>
+		               	
+		               	
+		                	<tr th:each="libroe : ${librosDeLista}">
+		                    	<td th:text="${libroe.sNombreLibro}" />
+		                    	<td th:text="${libroe.sAutorLibro}" />
+		                    	<td th:text="${libroe.sEditorialLibro}"/>
+		                    	<td th:text="${libroe.sIdLibroApiGoogle}" />
+		                    	<td><a th:href="@{/api-web-libreria/eliminarLibro(idLibroListaLibros=${libroe.idLibroListaLibros})}" th:text="Eliminar"/></td>
+		                	</tr>		               	
+		               	
+		               	
+		            </table> 
+		            </br>
+		            </br>
+		            <label for="nombre">Buscar y asociar libro</label>
+		            <div>
+		            	
+		            	
+			            <table>
+			                <tr>
+			                    <td><label for="nombreLibro">Nombre Libro</label></td>
+			                    <td><input type="text" name="nombreLibro" id="nombreLibro"/></td>
+			                </tr>
+			                <tr>
+			                    <td><label for="autorLibro">Autor Libro</label></td>
+			                    <td><input type="text" name="autorLibro" id="autorLibro"/></td>
+			                </tr>
+			                <tr>
+			                    <td><label for="autorLibro">Editorial Libro</label></td>
+			                    <td><input type="text" name="editorialLibro" id="autorLibro"/></td>
+			                </tr>			                
+			            </table>		            	
+            	
+		            	
+		            	</br></br>	
+		            	<button type="submit" name="action" value="buscarLibros">Buscar</button> 
+		            	
+		            	
+		            	
+		            	</br>
+		            	<label for="nombre">Resultados libros de google</label>
+		            	</br>
+		            	<table border="1">
+		            		<tr>
+		               			<td>Id</td>
+		               			<td>Título</td>
+		               			<td>Autor</td>
+		               			<td>Editorial</td>
+		               			<td>Asociar</td>
+		               		</tr>
+		                	<tr th:each="libro : ${listaLibrosGoogle}">
+		                    	<td th:text="${libro.id}" />
+		                    	<td th:text="${libro.title}" />
+		                    	<td th:text="${libro.autorsString}"/>
+		                    	<td th:text="${libro.publisher}" />
+		                    	<td><a th:href="@{/api-web-libreria/asociarLibroLista/} + ${libro.id} +'/'+ ${libro.title} +'/'+ ${libro.autorsString} +'/'+ ${libro.publisher} +'/'" th:text="Asociar"/></td>
+		                	</tr>
+		            	</table>             	
+		            </div>
+	    		</div>
+	        </div>
+	        </br>
+    		<a th:href="@{/api-web-libreria/libreria}">Salir</a>
+    	</form>
+    </body>
+</html>

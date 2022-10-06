@@ -13,7 +13,7 @@ public interface ClienteServices {
 	public void guardarUsuario(MaestroUsuarios entidad);
 	public void guardarListaDeLibros(ListaDeLibros entidad);
 	public List<ListaDeLibros> obtenerListaDeLibrosByUsuario(Long idUsuario);
-	public List<GBVolumeInfoWrapper> obtenerLibrosGoole(String titulo, String autor);
+	public List<GBVolumeInfoWrapper> obtenerLibrosGoole(String titulo, String autor, String editorial);
 	public void guardarLibroEnLista(LibroListaLibros entidad);
 	
 	public String eliminarLibro(LibroListaLibros entidad);

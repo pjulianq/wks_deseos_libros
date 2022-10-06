@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpEntity"/>
     <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.MaestroUsuarios"/>
-    <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.ListaDeLibros"/>
     <fullyQualifiedTypeName name="com.co.libros.models.dao.IListaDeLibrosDAO"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.co.libros.models.service.IListaDeLibrosService"/>
@@ -23,4 +22,5 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.DtoSession"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.ListaDeLibros"/>
 </qualifiedTypeNameHistroy>

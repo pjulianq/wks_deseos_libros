@@ -13,7 +13,9 @@
     			<br>
     			<label for="nombre">Nombre Lista</label>
 		        <input type="text" name="nombre" th:field="*{sNombreLista}" id="nombre"/> 
-		        <input type="submit" name ="guardarListaLibros"  th:value="Guardar"/>		
+		        <div  th:if="*{idListaLibros ==null or idListaLibros==0}">
+		        	<input type="submit" name ="guardarListaLibros"  th:value="Guardar"/>
+		        </div>		
 	    		
 	    		<div  th:if="*{idListaLibros !=null and idListaLibros>0}">
 	    		
@@ -44,13 +46,29 @@
 		            </br>
 		            <label for="nombre">Buscar y asociar libro</label>
 		            <div>
-		            	<label for="nombreLibro">Nombre Libro</label>
-		            	<input type="text" name="nombreLibro" id="nombreLibro"/>
-		            	</br>
-		            	<label for="autorLibro">Autor Libro</label>
-		            	<input type="text" name="autorLibro" id="autorLibro"/>
+		            	
+		            	<fieldset>
+			            <table>
+			                <tr>
+			                    <td><label for="nombreLibro">Nombre Libro</label></td>
+			                    <td><input type="text" name="nombreLibro" id="nombreLibro"/></td>
+			                </tr>
+			                <tr>
+			                    <td><label for="autorLibro">Autor Libro</label></td>
+			                    <td><input type="text" name="autorLibro" id="autorLibro"/></td>
+			                </tr>
+			                <tr>
+			                    <td><label for="autorLibro">Editorial Libro</label></td>
+			                    <td><input type="text" name="editorialLibro" id="autorLibro"/></td>
+			                </tr>			                
+			            </table>		            	
+            	
+		            	
 		            	</br></br>	
 		            	<button type="submit" name="action" value="buscarLibros">Buscar</button> 
+		            	
+		            	
+		            	
 		            	</br>
 		            	<label for="nombre">Resultados libros de google</label>
 		            	</br>

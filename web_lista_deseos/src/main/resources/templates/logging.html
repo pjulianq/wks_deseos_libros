@@ -5,15 +5,20 @@
         <meta charset="UTF-8">
     </head>
     <body>
-    
-		 
-    
 	    <form th:action="@{/api-web-libreria/ingresarSistema}" method="post">
-		    <label for="loggin" th:text="Loggin"></label>
-		    <input type="text" name="loggin" id="loggin"/>
-		    <br>
-		    <br><label for="password" th:text="Password"></label>
-		    <input type="text" name="password" id="password"/>
+	    	<fieldset>
+            <legend>Ingreso al sistema</legend>
+            <table>
+                <tr>
+                    <td><label for="loggin" th:text="Loggin"></label></td>
+                    <td><input type="text" name="loggin" id="loggin"/></td>
+                </tr>
+                <tr>
+                    <td><label for="password" th:text="Password"></label></td>
+                    <td><input type="text" name="password" id="password"/></td>
+                </tr>
+            </table>
+            </br>
 		    <input type="submit" name ="ingresar"  th:value="Ingresar"/>
 		    </br>
 		    </br>

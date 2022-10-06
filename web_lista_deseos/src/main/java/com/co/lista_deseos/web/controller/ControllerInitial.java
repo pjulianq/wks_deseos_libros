@@ -49,13 +49,14 @@ public class ControllerInitial {
 	
     @PostMapping("/ingresarSistema")
     public String ingresarSistema(@RequestParam("loggin") String loggin,@RequestParam("password") String password,Model model){
-    	if(loggin==null || "".equals(loggin))
+    	if( (loggin==null || "".equals(loggin)) && (password==null || "".equals(password))   )
     		return "logging";
     	MaestroUsuarios usuario = clienteServices.obtenerUsuarioLogginPassword(loggin,password);
     	if(usuario==null)
     		return "logging";
     	model.addAttribute("maestroUsuarios", usuario==null?new MaestroUsuarios():usuario);
-    	consultarListasDeLibrosByUsuario(usuario.getIdUsuario(), model);	
+    	consultarListasDeLibrosByUsuario(usuario.getIdUsuario(), model);
+    	idUsuario = usuario.getIdUsuario();
     	return "paginaPrincipal";
     }	
 	
@@ -116,6 +117,11 @@ public class ControllerInitial {
         usuario.setIdUsuario(idUsuario);
         model.addAttribute("maestroUsuarios",usuario);
         consultarListasDeLibrosByUsuario(idUsuario, model);
+        
+        
+        
+        
+        
         return "paginaPrincipal";
 	}
 	
@@ -143,8 +149,10 @@ public class ControllerInitial {
 	
 	
 	@RequestMapping(value="/guardarListaLibros", method=RequestMethod.POST, params="action=buscarLibros")
-	public String buscarLibros(@Valid ListaDeLibros listaDeLibros,Model model,@RequestParam("nombreLibro") String nombreLibro,@RequestParam("autorLibro") String autorLibro) {
-		var listaLibrosGoogle = clienteServices.obtenerLibrosGoole(nombreLibro, autorLibro);
+	public String buscarLibros(@Valid ListaDeLibros listaDeLibros,Model model,@RequestParam("nombreLibro") String nombreLibro,
+			                                                                  @RequestParam("autorLibro") String autorLibro,
+			                                                                  @RequestParam("editorialLibro") String editorialLibro) {
+		var listaLibrosGoogle = clienteServices.obtenerLibrosGoole(nombreLibro, autorLibro,editorialLibro);
 		model.addAttribute("listaDeLibros",listaDeLibros);
 		model.addAttribute("listaLibrosGoogle",listaLibrosGoogle);
 		return "editarListaLibros";

@@ -31,6 +31,7 @@ public class ClienteServicesImpl implements ClienteServices{
 	private final String baseApiBook="https://www.googleapis.com/books/v1/volumes?q=-term";
 	private final String baseFilterAutor ="+inauthor:";
 	private final String baseFilterTitulo ="+intitle:";
+	private final String baseFilterPublisher ="+inpublisher:";
 	private final String baseKey ="AIzaSyDuhgwVipeWWm7RaBQQ2k-ZpEuJWFZdKF8";
 	
 	
@@ -86,13 +87,15 @@ public class ClienteServicesImpl implements ClienteServices{
 	
 
 	@Override
-	public List<GBVolumeInfoWrapper> obtenerLibrosGoole(String titulo, String autor) {
+	public List<GBVolumeInfoWrapper> obtenerLibrosGoole(String titulo, String autor,String editorial) {
 		RestTemplate restTemplate = new RestTemplate();
 		String stsrConsultaGoogle = baseApiBook;
 		if(titulo!=null && !"".equals(titulo))
 			stsrConsultaGoogle = stsrConsultaGoogle + baseFilterTitulo + titulo;
 		if(autor!=null && !"".equals(autor))
 			stsrConsultaGoogle = stsrConsultaGoogle + baseFilterAutor + autor;
+		if(editorial!=null && !"".equals(editorial))
+			stsrConsultaGoogle = stsrConsultaGoogle + baseFilterPublisher + editorial;		
 		stsrConsultaGoogle = stsrConsultaGoogle +"&printType=books";
 		stsrConsultaGoogle = stsrConsultaGoogle +"&key="+baseKey;
 			
@@ -102,21 +105,22 @@ public class ClienteServicesImpl implements ClienteServices{
 		GBVolumeInfoWrapper add;
 		List<GBVolumeInfoWrapper> lstlibrosInfo = new ArrayList<GBVolumeInfoWrapper>();
 		String strAutores="";
-		for(GBItemsWrapper object:lstLibros) {
-			add = object.getVolumeInfo();
-			add.setTitle(add.getTitle().replace("?",""));
-			add.setId(object.getId());
-			strAutores="";
-			if(add.getAuthors()!=null) {
-				for(String aut:add.getAuthors()) {
-					strAutores=strAutores+ "" +aut;
+		if(lstLibros!=null)
+			for(GBItemsWrapper object:lstLibros) {
+				add = object.getVolumeInfo();
+				add.setTitle(add.getTitle().replace("?",""));
+				add.setId(object.getId());
+				strAutores="";
+				if(add.getAuthors()!=null) {
+					for(String aut:add.getAuthors()) {
+						strAutores=strAutores+ "" +aut;
+					}
+					add.setAutorsString(strAutores);
 				}
-				add.setAutorsString(strAutores);
+				lstlibrosInfo.add(add);
 			}
-			lstlibrosInfo.add(add);
-		}
 		//ResponseEntity entity2 = restTemplate.getForEntity("https://www.googleapis.com/books/v1/volumes?q=-term+intitle:caperucita&printType=books&key=AIzaSyDuhgwVipeWWm7RaBQQ2k-ZpEuJWFZdKF8", String.class);
-		System.out.println(((GBWrapper) entity.getBody()).getItems()[0].getVolumeInfo().getPublisher());	
+		//System.out.println(((GBWrapper) entity.getBody()).getItems()[0].getVolumeInfo().getPublisher());	
 		return lstlibrosInfo;
 	}
 	
