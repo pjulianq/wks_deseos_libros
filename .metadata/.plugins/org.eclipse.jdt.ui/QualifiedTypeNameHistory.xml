@@ -23,4 +23,5 @@
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.DtoSession"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.ListaDeLibros"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
 </qualifiedTypeNameHistroy>

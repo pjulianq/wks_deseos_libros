@@ -7376,3 +7376,198 @@ Caused by: java.io.EOFException: input contained no data
 2022-10-06 13:16:01,788 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2022-10-06 13:16:01,790 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-10-06 13:16:01,791 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_zuul_server\src\test\resources
+2022-10-06 13:29:56,149 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-10-06 13:59:58,142 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 13:59:58,143 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 13:59:58,147 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 13:59:58,161 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 13:59:58,164 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 13:59:58,164 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 13:59:58,164 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_config_server\src\test\resources
+2022-10-06 13:59:59,773 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 13:59:59,773 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 13:59:59,774 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 13:59:59,775 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 13:59:59,778 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 13:59:59,779 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 13:59:59,779 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_eureka_server\src\test\resources
+2022-10-06 14:00:00,975 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:00,976 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:00:00,990 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:00:00,994 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:00,994 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_zuul_server\src\test\resources
+2022-10-06 14:00:02,062 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:02,062 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:00:02,062 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:00:02,064 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:00:02,067 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:02,067 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:00:02,067 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_libros\src\test\resources
+2022-10-06 14:00:02,827 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:02,827 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:00:02,828 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:00:02,829 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:00:02,831 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:02,831 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:00:02,832 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_usuarios\src\test\resources
+2022-10-06 14:00:03,776 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:03,776 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:00:03,777 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:00:03,778 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:00:03,792 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:00:03,792 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:00:03,792 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:01:38,933 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:01:38,933 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:01:38,937 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:01:38,947 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:01:38,952 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:01:38,952 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:01:38,952 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:05:01,828 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:05:01,828 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:05:01,829 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:05:01,835 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:05:01,839 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:05:01,839 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:05:01,839 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:07:43,638 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:07:43,638 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:07:43,639 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:07:43,648 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:07:43,653 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:07:43,653 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:07:43,653 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:08:52,265 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:08:52,265 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:08:52,266 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:08:52,276 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:08:52,278 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:08:52,278 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:08:52,279 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:09:20,374 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:09:20,374 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:09:20,375 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:09:20,379 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:09:20,382 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:09:20,382 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:09:20,382 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:09:31,146 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:09:31,147 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:09:31,148 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:09:31,154 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:09:31,157 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:09:31,157 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:09:31,157 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:10:41,156 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:10:41,156 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:10:41,156 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:10:41,345 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:10:41,347 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:10:41,348 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:10:41,348 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:11:44,235 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:11:44,235 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:11:44,236 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:11:44,250 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:11:44,253 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:11:44,253 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:11:44,254 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:17:07,996 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:17:07,996 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:17:07,997 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:17:08,005 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:17:08,008 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:17:08,008 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:17:08,008 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:19:21,670 [Worker-6: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_cfg_config_server] INFO  o.e.m.i.launch.MavenLaunchDelegate - A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_config_server
+2022-10-06 14:19:21,673 [Worker-6: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_cfg_config_server] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-10-06 14:19:27,204 [Worker-15: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_cfg_eureka_server] INFO  o.e.m.i.launch.MavenLaunchDelegate - A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_eureka_server
+2022-10-06 14:19:27,204 [Worker-15: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_cfg_eureka_server] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-10-06 14:19:33,175 [Worker-18: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_cfg_zuul_server] INFO  o.e.m.i.launch.MavenLaunchDelegate - A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_zuul_server
+2022-10-06 14:19:33,175 [Worker-18: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_cfg_zuul_server] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-10-06 14:19:38,324 [Worker-22: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_libros] INFO  o.e.m.i.launch.MavenLaunchDelegate - A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_libros
+2022-10-06 14:19:38,324 [Worker-22: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_libros] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-10-06 14:19:42,657 [Worker-14: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_usuarios] INFO  o.e.m.i.launch.MavenLaunchDelegate - A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_usuarios
+2022-10-06 14:19:42,657 [Worker-14: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_ms_usuarios] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-10-06 14:19:48,400 [Worker-17: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_web_lista_deseos] INFO  o.e.m.i.launch.MavenLaunchDelegate - A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos
+2022-10-06 14:19:48,400 [Worker-17: Launching Executing clean in A__EJERCICIOS_MERCADO_PAGO_wks_deseos_libros_web_lista_deseos] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-10-06 14:19:50,513 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:19:50,513 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:19:50,513 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:19:50,515 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:19:50,524 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:19:50,524 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:19:50,524 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources
+2022-10-06 14:19:58,184 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2022-10-06 14:19:59,239 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.co.lista_deseos:web_lista_deseos:0.0.1-SNAPSHOT @ A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\pom.xml.
+2022-10-06 14:19:59,711 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.co.libros:ms_libros:0.0.1-SNAPSHOT @ A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_libros\pom.xml.
+2022-10-06 14:20:00,074 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.co.eureka:ms_cfg_eureka_server:0.0.1-SNAPSHOT @ A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_eureka_server\pom.xml.
+2022-10-06 14:20:00,207 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.co.zuul:ms_cfg_zuul_server:0.0.1-SNAPSHOT @ A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_zuul_server\pom.xml.
+2022-10-06 14:20:00,440 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.co.config_server:ms_cfg_config_server:0.0.1-SNAPSHOT @ A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_config_server\pom.xml.
+2022-10-06 14:20:00,524 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.co.usuarios:ms_usuarios:0.0.1-SNAPSHOT @ A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_usuarios\pom.xml.
+2022-10-06 14:20:04,208 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_cfg_config_server/src/main/java
+2022-10-06 14:20:04,208 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_cfg_config_server/src/main/resources
+2022-10-06 14:20:04,209 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_cfg_config_server/src/main/resources
+2022-10-06 14:20:04,209 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_cfg_config_server/src/test/java
+2022-10-06 14:20:04,531 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_cfg_eureka_server/src/main/java
+2022-10-06 14:20:04,531 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_cfg_eureka_server/src/main/resources
+2022-10-06 14:20:04,531 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_cfg_eureka_server/src/main/resources
+2022-10-06 14:20:04,532 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_cfg_eureka_server/src/test/java
+2022-10-06 14:20:05,077 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_cfg_zuul_server/src/main/java
+2022-10-06 14:20:05,077 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_cfg_zuul_server/src/main/resources
+2022-10-06 14:20:05,078 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_cfg_zuul_server/src/main/resources
+2022-10-06 14:20:05,078 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_cfg_zuul_server/src/test/java
+2022-10-06 14:20:05,540 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_libros/src/main/java
+2022-10-06 14:20:05,540 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_libros/src/main/resources
+2022-10-06 14:20:05,540 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_libros/src/main/resources
+2022-10-06 14:20:05,540 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_libros/src/test/java
+2022-10-06 14:20:06,030 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_usuarios/src/main/java
+2022-10-06 14:20:06,030 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_usuarios/src/main/resources
+2022-10-06 14:20:06,031 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms_usuarios/src/main/resources
+2022-10-06 14:20:06,031 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms_usuarios/src/test/java
+2022-10-06 14:20:06,671 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /web_lista_deseos/src/main/java
+2022-10-06 14:20:06,671 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /web_lista_deseos/src/main/resources
+2022-10-06 14:20:06,672 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /web_lista_deseos/src/main/resources
+2022-10-06 14:20:06,672 [Worker-19: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /web_lista_deseos/src/test/java
+2022-10-06 14:20:07,333 [Worker-19: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 9 sec
+2022-10-06 14:20:07,826 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:07,826 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:07,827 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:20:07,842 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:20:07,844 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:07,844 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:07,845 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_config_server\src\test\resources
+2022-10-06 14:20:08,286 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:08,286 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:08,286 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:20:08,288 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:20:08,290 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:08,290 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:08,290 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_eureka_server\src\test\resources
+2022-10-06 14:20:08,850 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:08,850 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:20:08,861 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:20:08,863 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:08,863 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_cfg_zuul_server\src\test\resources
+2022-10-06 14:20:09,477 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:09,477 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:09,477 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:20:09,479 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:20:09,481 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:09,481 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:09,481 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_libros\src\test\resources
+2022-10-06 14:20:10,099 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:10,099 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:10,100 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:20:10,101 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-06 14:20:10,103 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:10,103 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:10,103 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\ms_usuarios\src\test\resources
+2022-10-06 14:20:10,877 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:10,877 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:10,878 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-06 14:20:10,888 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-06 14:20:10,899 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-06 14:20:10,899 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-06 14:20:10,899 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory A:\EJERCICIOS\MERCADO_PAGO\wks_deseos_libros\web_lista_deseos\src\test\resources

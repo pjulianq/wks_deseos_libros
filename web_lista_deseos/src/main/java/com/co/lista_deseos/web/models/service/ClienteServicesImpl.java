@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -28,15 +29,30 @@ import lombok.extern.slf4j.Slf4j;
 public class ClienteServicesImpl implements ClienteServices{
 	
 	private final String basepath="http://localhost:8090/";
-	private final String baseApiBook="https://www.googleapis.com/books/v1/volumes?q=-term";
-	private final String baseFilterAutor ="+inauthor:";
-	private final String baseFilterTitulo ="+intitle:";
-	private final String baseFilterPublisher ="+inpublisher:";
-	private final String baseKey ="AIzaSyDuhgwVipeWWm7RaBQQ2k-ZpEuJWFZdKF8";
+	//private final String baseApiBook="https://www.googleapis.com/books/v1/volumes?q=-term";
+	//private final String baseFilterAutor ="+inauthor:";
+	//private final String baseFilterTitulo ="+intitle:";
+	//private final String baseFilterPublisher ="+inpublisher:";
+	//private final String baseKey ="AIzaSyDuhgwVipeWWm7RaBQQ2k-ZpEuJWFZdKF8";
 	
 	
 	@Autowired
 	RestTemplate clienteRest;
+	
+	@Value("${google.keyAPIBooks}")
+	private String gooleKeyAPIBooks;
+	
+	@Value("${google.urlAPIBooks}")
+	private String gooleURLAPIBooks;	
+	
+	@Value("${google.baseFilterAutor}")
+	private String baseFilterAutor;	
+	
+	@Value("${google.baseFilterTitulo}")
+	private String baseFilterTitulo;	
+	
+	@Value("${google.baseFilterPublisher}")
+	private String baseFilterPublisher;		
 
 	@Override
 	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password) {
@@ -89,7 +105,7 @@ public class ClienteServicesImpl implements ClienteServices{
 	@Override
 	public List<GBVolumeInfoWrapper> obtenerLibrosGoole(String titulo, String autor,String editorial) {
 		RestTemplate restTemplate = new RestTemplate();
-		String stsrConsultaGoogle = baseApiBook;
+		String stsrConsultaGoogle = gooleURLAPIBooks;
 		if(titulo!=null && !"".equals(titulo))
 			stsrConsultaGoogle = stsrConsultaGoogle + baseFilterTitulo + titulo;
 		if(autor!=null && !"".equals(autor))
@@ -97,7 +113,7 @@ public class ClienteServicesImpl implements ClienteServices{
 		if(editorial!=null && !"".equals(editorial))
 			stsrConsultaGoogle = stsrConsultaGoogle + baseFilterPublisher + editorial;		
 		stsrConsultaGoogle = stsrConsultaGoogle +"&printType=books";
-		stsrConsultaGoogle = stsrConsultaGoogle +"&key="+baseKey;
+		stsrConsultaGoogle = stsrConsultaGoogle +"&key="+gooleKeyAPIBooks;
 			
 		ResponseEntity<GBWrapper> entity = restTemplate.getForEntity(stsrConsultaGoogle, GBWrapper.class);
 		GBWrapper wrapper=(entity.getBody());
