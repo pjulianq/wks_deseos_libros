@@ -12,7 +12,6 @@
     <fullyQualifiedTypeName name="com.co.libros.models.service.IListaDeLibrosService"/>
     <fullyQualifiedTypeName name="com.co.libros.models.entity.ListaDeLibros"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBItemsWrapper"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="com.co.libros.models.entity.LibroListaLibros"/>
@@ -24,7 +23,10 @@
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.DtoSession"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.ListaDeLibros"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
-    <fullyQualifiedTypeName name="com.co.lista_deseos.models.entity.MaestroUsuarios"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.models.dao.IListaDeLibrosDAO"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.models.entity.MaestroUsuarios"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.models.entity.ListaDeLibros"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.models.entity.LibroListaLibros"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

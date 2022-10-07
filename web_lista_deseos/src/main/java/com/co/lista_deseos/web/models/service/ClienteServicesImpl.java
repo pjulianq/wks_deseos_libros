@@ -1,30 +1,27 @@
 package com.co.lista_deseos.web.models.service;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.co.lista_deseos.clients.modelsdto.LibroListaLibros;
+import com.co.lista_deseos.clients.modelsdto.LibroListaLibrosDto;
 import com.co.lista_deseos.clients.modelsdto.ListaDeLibrosDto;
 import com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBItemsWrapper;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBVolumeInfoWrapper;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBWrapper;
+import com.co.lista_deseos.models.dao.ILibroListaLibrosDAO;
 import com.co.lista_deseos.models.dao.IListaDeLibrosDAO;
 import com.co.lista_deseos.models.dao.IMaestroUsuariosDAO;
+import com.co.lista_deseos.models.entity.LibroListaLibros;
 import com.co.lista_deseos.models.entity.ListaDeLibros;
+import com.co.lista_deseos.models.entity.MaestroUsuarios;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -51,6 +48,9 @@ public class ClienteServicesImpl implements ClienteServices{
 	
 	@Autowired
 	IListaDeLibrosDAO listaDeLibrosDAO;
+	
+	@Autowired
+	ILibroListaLibrosDAO libroListaLibrosDAO;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -85,22 +85,29 @@ public class ClienteServicesImpl implements ClienteServices{
 	
 	@Override
 	public void guardarUsuario(MaestroUsuariosDto usuario) {
+		/*
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
+			
 			url = new URI(basepathZuul+"servicio-usuarios/usuarios/guardarUsuario/");
 			HttpEntity<MaestroUsuariosDto> requestEntity = new HttpEntity<>(usuario, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
-			System.out.println(uri.getPath());				
+			System.out.println(uri.getPath());	
+
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
-		}
+		}*/
+		
+		MaestroUsuarios mu = modelMapper.map(usuario, MaestroUsuarios.class);
+		maestroUsuariosDAO.save(mu);
 	}	
 	
 	@Override
 	public void guardarListaDeLibros(ListaDeLibrosDto listaDeLibros) {
+		/*
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
@@ -112,7 +119,9 @@ public class ClienteServicesImpl implements ClienteServices{
 			System.out.println(uri.getPath());				
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
-		}
+		}*/
+		ListaDeLibros ll = modelMapper.map(listaDeLibros, ListaDeLibros.class);
+		listaDeLibrosDAO.save(ll);
 	}
 
 
@@ -121,8 +130,11 @@ public class ClienteServicesImpl implements ClienteServices{
 		//List<ListaDeLibros> lista = Arrays.asList(clienteRest.getForObject(basepathZuul+"servicio-libros/libros/obtenerListaDeLibrosByUsuario/"+idUsuario, ListaDeLibros[].class));
 		List<ListaDeLibrosDto> lista=null; 
 		List<ListaDeLibros> listaDao = listaDeLibrosDAO.obtenerListaDeLibrosByUsuario(idUsuario);
-		if(listaDao!=null && listaDao.size()>0)
-			lista = (List<ListaDeLibrosDto>) modelMapper.map(listaDao, ListaDeLibrosDto.class);
+		if(listaDao!=null && listaDao.size()>0) {
+			lista = new ArrayList<ListaDeLibrosDto>();
+			for(ListaDeLibros l:listaDao)
+				lista.add( modelMapper.map(l, ListaDeLibrosDto.class));
+		}
 		return lista;
 		
 	}
@@ -168,47 +180,63 @@ public class ClienteServicesImpl implements ClienteServices{
 	
 	
 	@Override
-	public void guardarLibroEnLista(LibroListaLibros libro) {
-		HttpHeaders headers = new HttpHeaders();
+	public void guardarLibroEnLista(LibroListaLibrosDto libro) {
+		/*HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
 			url = new URI(basepathZuul+"servicio-libros/libros/guardarLibro/");
-			HttpEntity<LibroListaLibros> requestEntity = new HttpEntity<>(libro, headers);
+			HttpEntity<LibroListaLibrosDto> requestEntity = new HttpEntity<>(libro, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
 			System.out.println(uri.getPath());				
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
-		}
+		}*/
+		libroListaLibrosDAO.save(modelMapper.map(libro, LibroListaLibros.class));
 	}
 
 	@Override
-	public String eliminarLibro(LibroListaLibros entidad) {
-		HttpHeaders headers = new HttpHeaders();
+	public String eliminarLibro(LibroListaLibrosDto entidad) {
+		/*HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
 			url = new URI(basepathZuul+"servicio-libros/libros/eliminarLibro/");
-			HttpEntity<LibroListaLibros> requestEntity = new HttpEntity<>(entidad, headers);
+			HttpEntity<LibroListaLibrosDto> requestEntity = new HttpEntity<>(entidad, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
 			System.out.println(uri.getPath());
 			return uri.getPath();
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
-		}
+		}*/
+		libroListaLibrosDAO.delete(modelMapper.map(entidad, LibroListaLibros.class));
 		return "";
 	}
 
 	@Override
-	public LibroListaLibros librofindById(Long id) {
-		LibroListaLibros entidad = clienteRest.getForObject(basepathZuul+"servicio-libros/libros/getLibroById/"+id, LibroListaLibros.class);
-		return entidad;
+	public LibroListaLibrosDto librofindById(Long id) {
+		LibroListaLibros libro = libroListaLibrosDAO.findById(id).orElse(null);
+		LibroListaLibrosDto retorno=null;
+		if(libro!=null)
+			retorno = modelMapper.map(libro, LibroListaLibrosDto.class);
+		
+		//LibroListaLibrosDto entidad = clienteRest.getForObject(basepathZuul+"servicio-libros/libros/getLibroById/"+id, LibroListaLibrosDto.class);
+		return retorno;
 	}
 	@Override
-	public List<LibroListaLibros> obtenerLibrosDeLista(Long idListaLibros) {
-		List<LibroListaLibros> lista = Arrays.asList(clienteRest.getForObject(basepathZuul+"servicio-libros/libros/obtenerLibrosDeLista/"+idListaLibros, LibroListaLibros[].class));
+	public List<LibroListaLibrosDto> obtenerLibrosDeLista(Long idListaLibros) {
+		List<LibroListaLibros> listaDAO = libroListaLibrosDAO.obtenerLibrosDeLista(idListaLibros);
+		List<LibroListaLibrosDto> lista = null;
+		if(listaDAO!=null && listaDAO.size()>0) {
+			lista = new ArrayList<LibroListaLibrosDto>();
+			for(LibroListaLibros e:listaDAO)
+				lista.add(modelMapper.map(e, LibroListaLibrosDto.class));
+			
+		}
+		
+		//List<LibroListaLibrosDto> lista = Arrays.asList(clienteRest.getForObject(basepathZuul+"servicio-libros/libros/obtenerLibrosDeLista/"+idListaLibros, LibroListaLibrosDto[].class));
 		return lista;
 		
 	}
@@ -216,6 +244,7 @@ public class ClienteServicesImpl implements ClienteServices{
 	
 	@Override
 	public String eliminarLista(ListaDeLibrosDto entidad) {
+		/*
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
@@ -228,7 +257,13 @@ public class ClienteServicesImpl implements ClienteServices{
 			return uri.getPath();
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
-		}
+		}*/
+		
+		List<LibroListaLibros> lstLibrosDel = libroListaLibrosDAO.obtenerLibrosDeLista(entidad.getIdListaLibros());
+		if(lstLibrosDel!=null && lstLibrosDel.size()>0)
+			for(LibroListaLibros ent:lstLibrosDel)
+				libroListaLibrosDAO.delete(ent);
+		listaDeLibrosDAO.delete(modelMapper.map(entidad, ListaDeLibros.class));
 		return "";
 	}	
 	

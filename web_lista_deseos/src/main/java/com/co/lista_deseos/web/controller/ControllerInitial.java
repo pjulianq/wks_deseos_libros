@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.co.lista_deseos.clients.modelsdto.LibroListaLibros;
+import com.co.lista_deseos.clients.modelsdto.LibroListaLibrosDto;
 import com.co.lista_deseos.clients.modelsdto.ListaDeLibrosDto;
 import com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBVolumeInfoWrapper;
@@ -100,7 +100,7 @@ public class ControllerInitial {
         if(errores.hasErrors()){
             return "paginaPrincipal";
         }
-        LibroListaLibros libro = new LibroListaLibros();
+        LibroListaLibrosDto libro = new LibroListaLibrosDto();
         libro.setsAutorLibro(gBVolumeInfoWrapper.getAutorsString());
         libro.setsEditorialLibro(gBVolumeInfoWrapper.getPublisher());
         libro.setsIdLibroApiGoogle(gBVolumeInfoWrapper.getId());
@@ -160,7 +160,7 @@ public class ControllerInitial {
 	
 	
     @GetMapping("/eliminarLibro") 
-    public String eliminarServicio(LibroListaLibros entidad,Model model){
+    public String eliminarServicio(LibroListaLibrosDto entidad,Model model){
     	clienteServices.eliminarLibro(entidad);
     	MaestroUsuariosDto usuario = new MaestroUsuariosDto();
         usuario.setIdUsuario(idUsuario);
