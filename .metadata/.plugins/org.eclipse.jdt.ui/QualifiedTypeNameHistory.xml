@@ -24,4 +24,7 @@
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.DtoSession"/>
     <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.ListaDeLibros"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.models.entity.MaestroUsuarios"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto"/>
+    <fullyQualifiedTypeName name="com.co.lista_deseos.models.dao.IListaDeLibrosDAO"/>
 </qualifiedTypeNameHistroy>

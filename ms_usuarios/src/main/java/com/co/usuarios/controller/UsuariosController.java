@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -17,17 +18,18 @@ import com.co.usuarios.models.entity.MaestroUsuarios;
 import com.co.usuarios.models.service.IMaestroUsuariosService;
 
 @RestController
+@RequestMapping("/usuarios")
 public class UsuariosController {
 	
 	@Autowired
 	private IMaestroUsuariosService maestroUsuariosService;
 	
-	@GetMapping("/usuarios/listarUsuarios")
+	@GetMapping("/listarUsuarios")
 	public List<MaestroUsuarios> listarUsuarios(){
 		return maestroUsuariosService.findAll();
 	}
 	
-	@GetMapping("/usuarios/obtenerUsuarioLogginPassword/{loggin}/{password}")
+	@GetMapping("/obtenerUsuarioLogginPassword/{loggin}/{password}")
 	public MaestroUsuarios obtenerUsuarioLogginPassword(@PathVariable String loggin,@PathVariable String password) {
 		return maestroUsuariosService.obtenerUsuarioLogginPassword(loggin,password);
 	}

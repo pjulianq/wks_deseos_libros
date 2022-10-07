@@ -1,6 +1,0 @@
-com\co\usuarios\models\entity\MaestroUsuarios.class
-com\co\usuarios\controller\UsuariosController.class
-com\co\usuarios\MsUsuariosApplication.class
-com\co\usuarios\models\service\IMaestroUsuariosService.class
-com\co\usuarios\models\dao\IMaestroUsuariosDAO.class
-com\co\usuarios\models\service\MaestroUsuariosImpl.class

@@ -21,13 +21,13 @@
 				
 	                <tr th:each="lista : ${listasLibrosUsuarios}">
 	                    <td th:text="${lista.sNombreLista}" /> 
-                    	<td><a th:href="@{/api-web-libreria/editarListaLibros/} + ${lista.idListaLibros}+'/'+${lista.idMaestroUsuario}+'/'+${lista.sNombreLista}" th:text="Editar"/></td>
-                    	<td><a th:href="@{/api-web-libreria/eliminarLista(idListaLibros=${lista.idListaLibros})}" th:text="Eliminar"/></td>
+                    	<td><a th:href="@{/editarListaLibros/} + ${lista.idListaLibros}+'/'+${lista.idMaestroUsuario}+'/'+${lista.sNombreLista}" th:text="Editar"/></td>
+                    	<td><a th:href="@{/eliminarLista(idListaLibros=${lista.idListaLibros})}" th:text="Eliminar"/></td>
 	                </tr>
 	            </table>  
 	            </br>
 	            </br>
-				<a th:href="@{/api-web-libreria/agregarListaLibros/}+*{maestroUsuarios.idUsuario}">Agregar nueva lista</a>	            
+				<a th:href="@{/agregarListaLibros/}+*{maestroUsuarios.idUsuario}">Agregar nueva lista</a>	            
     	</div>
     	</br>
     	<a th:href="@{/api-web-libreria/libreria}">Salir</a>

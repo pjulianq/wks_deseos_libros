@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -16,11 +17,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.co.lista_deseos.clients.modelsdto.LibroListaLibros;
-import com.co.lista_deseos.clients.modelsdto.ListaDeLibros;
-import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+import com.co.lista_deseos.clients.modelsdto.ListaDeLibrosDto;
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBItemsWrapper;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBVolumeInfoWrapper;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBWrapper;
+import com.co.lista_deseos.models.dao.IListaDeLibrosDAO;
+import com.co.lista_deseos.models.dao.IMaestroUsuariosDAO;
+import com.co.lista_deseos.models.entity.ListaDeLibros;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,7 +32,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ClienteServicesImpl implements ClienteServices{
 	
-	private final String basepath="http://localhost:8090/";
+	private final String basepathMsUsuarios="http://localhost:8002/";
+	private final String basepathMsLibros="http://localhost:8003/";
+	private final String basepathZuul="http://localhost:8090/";
+	
 	//private final String baseApiBook="https://www.googleapis.com/books/v1/volumes?q=-term";
 	//private final String baseFilterAutor ="+inauthor:";
 	//private final String baseFilterTitulo ="+intitle:";
@@ -38,6 +45,15 @@ public class ClienteServicesImpl implements ClienteServices{
 	
 	@Autowired
 	RestTemplate clienteRest;
+	
+	@Autowired
+	IMaestroUsuariosDAO maestroUsuariosDAO;
+	
+	@Autowired
+	IListaDeLibrosDAO listaDeLibrosDAO;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 	
 	@Value("${google.keyAPIBooks}")
 	private String gooleKeyAPIBooks;
@@ -55,20 +71,26 @@ public class ClienteServicesImpl implements ClienteServices{
 	private String baseFilterPublisher;		
 
 	@Override
-	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password) {
-		MaestroUsuarios usuario = clienteRest.getForObject(basepath+"/servicio-usuarios/usuarios/obtenerUsuarioLogginPassword/"+loggin+"/"+password, MaestroUsuarios.class);
-		return usuario;
+	public MaestroUsuariosDto obtenerUsuarioLogginPassword(String loggin, String password) {
+		//MaestroUsuarios usuario = clienteRest.getForObject(basepathZuul+"/servicio-usuarios/usuarios/obtenerUsuarioLogginPassword/"+loggin+"/"+password, MaestroUsuarios.class);
+		//MaestroUsuarios usuario = clienteRest.getForObject(basepathMsUsuarios+"/usuarios/obtenerUsuarioLogginPassword/"+loggin+"/"+password, MaestroUsuarios.class);
+		com.co.lista_deseos.models.entity.MaestroUsuarios usuario = maestroUsuariosDAO.obtenerUsuarioLogginPassword(loggin, password);
+		MaestroUsuariosDto usuarioreturn= null;
+		if(usuario!=null)
+			usuarioreturn = modelMapper.map(usuario, MaestroUsuariosDto.class);
+		
+		return usuarioreturn;
 	}
 
 	
 	@Override
-	public void guardarUsuario(MaestroUsuarios usuario) {
+	public void guardarUsuario(MaestroUsuariosDto usuario) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
-			url = new URI(basepath+"servicio-usuarios/usuarios/guardarUsuario/");
-			HttpEntity<MaestroUsuarios> requestEntity = new HttpEntity<>(usuario, headers);
+			url = new URI(basepathZuul+"servicio-usuarios/usuarios/guardarUsuario/");
+			HttpEntity<MaestroUsuariosDto> requestEntity = new HttpEntity<>(usuario, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
 			System.out.println(uri.getPath());				
@@ -78,13 +100,13 @@ public class ClienteServicesImpl implements ClienteServices{
 	}	
 	
 	@Override
-	public void guardarListaDeLibros(ListaDeLibros listaDeLibros) {
+	public void guardarListaDeLibros(ListaDeLibrosDto listaDeLibros) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
-			url = new URI(basepath+"servicio-libros/libros/guardarListaDeLibros/");
-			HttpEntity<ListaDeLibros> requestEntity = new HttpEntity<>(listaDeLibros, headers);
+			url = new URI(basepathZuul+"servicio-libros/libros/guardarListaDeLibros/");
+			HttpEntity<ListaDeLibrosDto> requestEntity = new HttpEntity<>(listaDeLibros, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
 			System.out.println(uri.getPath());				
@@ -95,8 +117,12 @@ public class ClienteServicesImpl implements ClienteServices{
 
 
 	@Override
-	public List<ListaDeLibros> obtenerListaDeLibrosByUsuario(Long idUsuario) {
-		List<ListaDeLibros> lista = Arrays.asList(clienteRest.getForObject(basepath+"servicio-libros/libros/obtenerListaDeLibrosByUsuario/"+idUsuario, ListaDeLibros[].class));
+	public List<ListaDeLibrosDto> obtenerListaDeLibrosByUsuario(Long idUsuario) {
+		//List<ListaDeLibros> lista = Arrays.asList(clienteRest.getForObject(basepathZuul+"servicio-libros/libros/obtenerListaDeLibrosByUsuario/"+idUsuario, ListaDeLibros[].class));
+		List<ListaDeLibrosDto> lista=null; 
+		List<ListaDeLibros> listaDao = listaDeLibrosDAO.obtenerListaDeLibrosByUsuario(idUsuario);
+		if(listaDao!=null && listaDao.size()>0)
+			lista = (List<ListaDeLibrosDto>) modelMapper.map(listaDao, ListaDeLibrosDto.class);
 		return lista;
 		
 	}
@@ -147,7 +173,7 @@ public class ClienteServicesImpl implements ClienteServices{
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
-			url = new URI(basepath+"servicio-libros/libros/guardarLibro/");
+			url = new URI(basepathZuul+"servicio-libros/libros/guardarLibro/");
 			HttpEntity<LibroListaLibros> requestEntity = new HttpEntity<>(libro, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
@@ -163,7 +189,7 @@ public class ClienteServicesImpl implements ClienteServices{
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
-			url = new URI(basepath+"servicio-libros/libros/eliminarLibro/");
+			url = new URI(basepathZuul+"servicio-libros/libros/eliminarLibro/");
 			HttpEntity<LibroListaLibros> requestEntity = new HttpEntity<>(entidad, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
@@ -177,25 +203,25 @@ public class ClienteServicesImpl implements ClienteServices{
 
 	@Override
 	public LibroListaLibros librofindById(Long id) {
-		LibroListaLibros entidad = clienteRest.getForObject(basepath+"servicio-libros/libros/getLibroById/"+id, LibroListaLibros.class);
+		LibroListaLibros entidad = clienteRest.getForObject(basepathZuul+"servicio-libros/libros/getLibroById/"+id, LibroListaLibros.class);
 		return entidad;
 	}
 	@Override
 	public List<LibroListaLibros> obtenerLibrosDeLista(Long idListaLibros) {
-		List<LibroListaLibros> lista = Arrays.asList(clienteRest.getForObject(basepath+"servicio-libros/libros/obtenerLibrosDeLista/"+idListaLibros, LibroListaLibros[].class));
+		List<LibroListaLibros> lista = Arrays.asList(clienteRest.getForObject(basepathZuul+"servicio-libros/libros/obtenerLibrosDeLista/"+idListaLibros, LibroListaLibros[].class));
 		return lista;
 		
 	}
 	
 	
 	@Override
-	public String eliminarLista(ListaDeLibros entidad) {
+	public String eliminarLista(ListaDeLibrosDto entidad) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI url;
 		try {
-			url = new URI(basepath+"servicio-libros/libros/eliminarLista/");
-			HttpEntity<ListaDeLibros> requestEntity = new HttpEntity<>(entidad, headers);
+			url = new URI(basepathZuul+"servicio-libros/libros/eliminarLista/");
+			HttpEntity<ListaDeLibrosDto> requestEntity = new HttpEntity<>(entidad, headers);
 			RestTemplate restTemplate = new RestTemplate();
 			URI uri = restTemplate.postForLocation(url, requestEntity);
 			System.out.println(uri.getPath());

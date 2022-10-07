@@ -3,16 +3,16 @@ package com.co.lista_deseos.web.models.service;
 import java.util.List;
 
 import com.co.lista_deseos.clients.modelsdto.LibroListaLibros;
-import com.co.lista_deseos.clients.modelsdto.ListaDeLibros;
-import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+import com.co.lista_deseos.clients.modelsdto.ListaDeLibrosDto;
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBVolumeInfoWrapper;
 
 public interface ClienteServices {
 	
-	public MaestroUsuarios obtenerUsuarioLogginPassword(String loggin, String password);
-	public void guardarUsuario(MaestroUsuarios entidad);
-	public void guardarListaDeLibros(ListaDeLibros entidad);
-	public List<ListaDeLibros> obtenerListaDeLibrosByUsuario(Long idUsuario);
+	public MaestroUsuariosDto obtenerUsuarioLogginPassword(String loggin, String password);
+	public void guardarUsuario(MaestroUsuariosDto entidad);
+	public void guardarListaDeLibros(ListaDeLibrosDto entidad);
+	public List<ListaDeLibrosDto> obtenerListaDeLibrosByUsuario(Long idUsuario);
 	public List<GBVolumeInfoWrapper> obtenerLibrosGoole(String titulo, String autor, String editorial);
 	public void guardarLibroEnLista(LibroListaLibros entidad);
 	
@@ -20,7 +20,7 @@ public interface ClienteServices {
 	public LibroListaLibros librofindById(Long id);
 	public List<LibroListaLibros> obtenerLibrosDeLista (Long idLista);
 	
-	public String eliminarLista(ListaDeLibros entidad);
+	public String eliminarLista(ListaDeLibrosDto entidad);
 	
 
 }

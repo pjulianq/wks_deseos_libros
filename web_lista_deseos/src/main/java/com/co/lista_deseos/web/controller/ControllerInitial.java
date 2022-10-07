@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.co.lista_deseos.clients.modelsdto.LibroListaLibros;
-import com.co.lista_deseos.clients.modelsdto.ListaDeLibros;
-import com.co.lista_deseos.clients.modelsdto.MaestroUsuarios;
+import com.co.lista_deseos.clients.modelsdto.ListaDeLibrosDto;
+import com.co.lista_deseos.clients.modelsdto.MaestroUsuariosDto;
 import com.co.lista_deseos.clients.modelsdto.apibooksgoogle.GBVolumeInfoWrapper;
 import com.co.lista_deseos.web.models.service.ClienteServices;
 
@@ -27,13 +27,6 @@ import com.co.lista_deseos.web.models.service.ClienteServices;
 @Controller
 public class ControllerInitial {
 	
-	/*
-	 @ModelAttribute("contador")
-	  public int getContador() {
-	    
-	    return 5;
-	  }
-	 */
 	
 	private Long idUsuario, idListaLibros;
 	
@@ -53,10 +46,10 @@ public class ControllerInitial {
     public String ingresarSistema(@RequestParam("loggin") String loggin,@RequestParam("password") String password,Model model){
     	if( (loggin==null || "".equals(loggin)) && (password==null || "".equals(password))   )
     		return "logging";
-    	MaestroUsuarios usuario = clienteServices.obtenerUsuarioLogginPassword(loggin,password);
+    	MaestroUsuariosDto usuario = clienteServices.obtenerUsuarioLogginPassword(loggin,password);
     	if(usuario==null)
     		return "logging";
-    	model.addAttribute("maestroUsuarios", usuario==null?new MaestroUsuarios():usuario);
+    	model.addAttribute("maestroUsuarios", usuario==null?new MaestroUsuariosDto():usuario);
     	consultarListasDeLibrosByUsuario(usuario.getIdUsuario(), model);
     	idUsuario = usuario.getIdUsuario();
     	return "paginaPrincipal";
@@ -64,12 +57,12 @@ public class ControllerInitial {
 	
 	@GetMapping("/openRegistroUsuario")
 	public String openRegistroUsuario(Model model) {
-		model.addAttribute("maestroUsuarios",new MaestroUsuarios());
+		model.addAttribute("maestroUsuarios",new MaestroUsuariosDto());
 		return "registroUsuario";
 	}
 	
     @PostMapping("/guardarUsuario")
-    public String guardarUsuario(@Valid MaestroUsuarios admUsuario,Errors errores){
+    public String guardarUsuario(@Valid MaestroUsuariosDto admUsuario,Errors errores){
         if(errores.hasErrors()){
             return "openRegistroUsuario";
         }
@@ -78,15 +71,15 @@ public class ControllerInitial {
     }  
     
 	@GetMapping("/agregarListaLibros/{idUsuario}")
-	public String agregarListaLibros(MaestroUsuarios maestro,Model model) {
-		ListaDeLibros listaDeLibros = new ListaDeLibros();
+	public String agregarListaLibros(MaestroUsuariosDto maestro,Model model) {
+		ListaDeLibrosDto listaDeLibros = new ListaDeLibrosDto();
 		listaDeLibros.setIdMaestroUsuario(maestro.getIdUsuario());
 		model.addAttribute("listaDeLibros",listaDeLibros);
 		return "editarListaLibros";
 	}
 	
 	@GetMapping("/editarListaLibros/{idListaLibros}/{idMaestroUsuario}/{sNombreLista}")
-	public String editarListaLibros(ListaDeLibros listaDeLibros,Model model) {
+	public String editarListaLibros(ListaDeLibrosDto listaDeLibros,Model model) {
 		listaDeLibros.setIdMaestroUsuario(listaDeLibros.getIdMaestroUsuario());
 		listaDeLibros.setIdListaLibros(listaDeLibros.getIdListaLibros());
 		listaDeLibros.setsNombreLista(listaDeLibros.getsNombreLista());
@@ -115,7 +108,7 @@ public class ControllerInitial {
         libro.setIdListaLibros(idListaLibros);
         clienteServices.guardarLibroEnLista(libro);
         
-        MaestroUsuarios usuario = new MaestroUsuarios();
+        MaestroUsuariosDto usuario = new MaestroUsuariosDto();
         usuario.setIdUsuario(idUsuario);
         model.addAttribute("maestroUsuarios",usuario);
         consultarListasDeLibrosByUsuario(idUsuario, model);
@@ -129,13 +122,13 @@ public class ControllerInitial {
 	
 
     @PostMapping("/guardarListaLibros")
-    public String guardarListaLibros(@Valid ListaDeLibros listaDeLibros,Errors errores, Model model){
+    public String guardarListaLibros(@Valid ListaDeLibrosDto listaDeLibros,Errors errores, Model model){
         if(errores.hasErrors()){
             return "paginaPrincipal";
         }
         clienteServices.guardarListaDeLibros(listaDeLibros);
         
-        MaestroUsuarios usuario = new MaestroUsuarios();
+        MaestroUsuariosDto usuario = new MaestroUsuariosDto();
         usuario.setIdUsuario(listaDeLibros.getIdMaestroUsuario());
         model.addAttribute("maestroUsuarios",usuario);
         consultarListasDeLibrosByUsuario(listaDeLibros.getIdMaestroUsuario(), model);
@@ -151,7 +144,7 @@ public class ControllerInitial {
 	
 	
 	@RequestMapping(value="/guardarListaLibros", method=RequestMethod.POST, params="action=buscarLibros")
-	public String buscarLibros(@Valid ListaDeLibros listaDeLibros,Model model,@RequestParam("nombreLibro") String nombreLibro,
+	public String buscarLibros(@Valid ListaDeLibrosDto listaDeLibros,Model model,@RequestParam("nombreLibro") String nombreLibro,
 			                                                                  @RequestParam("autorLibro") String autorLibro,
 			                                                                  @RequestParam("editorialLibro") String editorialLibro) {
 		var listaLibrosGoogle = clienteServices.obtenerLibrosGoole(nombreLibro, autorLibro,editorialLibro);
@@ -169,7 +162,7 @@ public class ControllerInitial {
     @GetMapping("/eliminarLibro") 
     public String eliminarServicio(LibroListaLibros entidad,Model model){
     	clienteServices.eliminarLibro(entidad);
-    	MaestroUsuarios usuario = new MaestroUsuarios();
+    	MaestroUsuariosDto usuario = new MaestroUsuariosDto();
         usuario.setIdUsuario(idUsuario);
         model.addAttribute("maestroUsuarios",usuario);
         consultarListasDeLibrosByUsuario(idUsuario, model);    	
@@ -177,9 +170,9 @@ public class ControllerInitial {
     }  
     
     @GetMapping("/eliminarLista") 
-    public String eliminarLista(ListaDeLibros entidad,Model model){
+    public String eliminarLista(ListaDeLibrosDto entidad,Model model){
     	clienteServices.eliminarLista(entidad);
-    	MaestroUsuarios usuario = new MaestroUsuarios();
+    	MaestroUsuariosDto usuario = new MaestroUsuariosDto();
         usuario.setIdUsuario(idUsuario);
         model.addAttribute("maestroUsuarios",usuario);
         consultarListasDeLibrosByUsuario(idUsuario, model);    	
