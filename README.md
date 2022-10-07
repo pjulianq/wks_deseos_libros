@@ -31,9 +31,15 @@ ms_usuarios: operaciones de usuarios
 
 ms_libros: operaciones de libros
 
-El primer servicio a levantar es eureka:
+Crear red docker
 
-Abriendo una consola de comandos debes ubicarte en el microservicio y ejecutar
+En una consola de comandos ejecuta:
+
+  docker network create networklibrary
+
+Posteriormente inciamos servicio eureka:
+
+Abriendo una consola de comandos debes ubicarte en el directorio dónde alojaste el workspace  (microservcio ms_cfg_eurek)a_server)
 
   cd <ruta_del_workpace>\wks_deseos_libros\ms_cfg_eureka_server
   
@@ -49,62 +55,79 @@ Creamos la imagen
 
   docker build -t servicio-eureka-server:v1 .
   
-Creamos la red 
 
-  docker network create networklibrary
   
 Levantamos una instancia de la imagen
   docker run -p 8761:8761 --name servicio-eureka-server --network networklibrary servicio-eureka-server:v1
   
 Probamos que la instancia alla iniciado de manera correcta (miramos el log o probamos con http://localhost:8761/)  
 
-Hacemos lo mismo para los demás microservicios:
+Iniciamos web_lista_deseos
+
+cd <directorio_workspace>\wks_deseos_libros-main\web_lista_deseos
+.\mvnw clean package -DskipTests
+docker build -t web_lista_deseos:v1 .
+docker run -p 8001:8001 --name web_lista_deseos --network networklibrary web_lista_deseos:v1
+
+Nota: con éstos dos servicios funciona la aplicación, aunque la lógica de usuarios y libros está desacoplada en microservicios tengo un problema dockerizandolos que actualmente está en revisión.
+
+Creamos base datos en docker
+
+	docker pull mysql:8
+	docker run -p 3306:3306 --name bdlibrary --network networklibrary -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=lista_deseos -d mysql:8
+  
+  Una vez creada e iniciada nos conectamos a la misma:
+  docker exec -it bdlibrary mysql -p
+		<password> admin
+Una ves logueados en la consoloa mysql ejecutamos:  
+use lista_deseos;
+CREATE TABLE `maestro_usuarios` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `s_nombre` varchar(200) NOT NULL,
+  `s_loggin` varchar(200) NOT NULL,
+  `s_password` varchar(200) NOT NULL,
+  `s_estado` varchar(1) DEFAULT NULL,
+  `d_fecha_creacion` datetime DEFAULT NULL,
+  `d_fecha_actualizacion` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `lista_de_libros` (
+  `id_lista_libros` int(11) NOT NULL AUTO_INCREMENT,
+  `id_maestro_usuario` int(11) NOT NULL,
+  `s_nombre_lista` varchar(200) NOT NULL,
+  `d_fecha_creacion` datetime DEFAULT NULL,
+  `s_estado` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`id_lista_libros`),
+  KEY `fk_usuario_idx` (`id_maestro_usuario`),
+  CONSTRAINT `fk_usuario` FOREIGN KEY (`id_maestro_usuario`) REFERENCES `maestro_usuarios` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `libros_lista_libros` (
+  `id_libro_lista_libros` int(11) NOT NULL AUTO_INCREMENT,
+  `id_lista_libros` int(11) DEFAULT NULL,
+  `s_id_libro_api_google` varchar(200) DEFAULT NULL,
+  `s_nombre_libro` varchar(200) DEFAULT NULL,
+  `s_autor_libro` varchar(200) DEFAULT NULL,
+  `s_editorial_libro` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_libro_lista_libros`),
+  KEY `fk_lista_libros_idx` (`id_lista_libros`),
+  CONSTRAINT `fk_lista_libros` FOREIGN KEY (`id_lista_libros`) REFERENCES `lista_de_libros` (`id_lista_libros`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+commit;  
 
 
+Para Iniciar la aplicacion:
+  
+  http://localhost:8001/libreria
   
 
-Dí cómo será ese paso
+Construido con 
+Thymeleaf
+Spring Boot Framework
+Docker
+MySql 8
 
-Da un ejemplo
-Y repite
 
-hasta finalizar
-Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo
 
-Ejecutando las pruebas ⚙️
-Explica como ejecutar las pruebas automatizadas para este sistema
 
-Analice las pruebas end-to-end 🔩
-Explica que verifican estas pruebas y por qué
 
-Da un ejemplo
-Y las pruebas de estilo de codificación ⌨️
-Explica que verifican estas pruebas y por qué
-
-Da un ejemplo
-Despliegue 📦
-Agrega notas adicionales sobre como hacer deploy
-
-Construido con 🛠️
-Menciona las herramientas que utilizaste para crear tu proyecto
-
-Dropwizard - El framework web usado
-Maven - Manejador de dependencias
-ROME - Usado para generar RSS
-Contribuyendo 🖇️
-Por favor lee el CONTRIBUTING.md para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-Wiki 📖
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra Wiki
-
-Versionado 📌
-Usamos SemVer para el versionado. Para todas las versiones disponibles, mira los tags en este repositorio.
-
-Autores ✒️
-Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
-
-Andrés Villanueva - Trabajo Inicial - villanuevand
-Fulanito Detal - Documentación - fulanitodetal
-También puedes mirar la lista de todos los contribuyentes quíenes han participado en este proyecto.
-
-Licencia 📄
+Version 1.0
