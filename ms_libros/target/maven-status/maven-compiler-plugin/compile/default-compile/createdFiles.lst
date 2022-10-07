@@ -1,0 +1,11 @@
+com\co\libros\models\dao\ILibroListaLibrosDAO.class
+com\co\libros\controller\ControllerLibros.class
+com\co\libros\models\entity\MaestroUsuarios.class
+com\co\libros\models\entity\ListaDeLibros.class
+com\co\libros\models\service\IListaDeLibrosService.class
+com\co\libros\models\service\ListaDeLibrosImpl.class
+com\co\libros\models\dao\IListaDeLibrosDAO.class
+com\co\libros\models\entity\LibroListaLibros.class
+com\co\libros\models\service\ILibroListaLibrosService.class
+com\co\libros\MsLibrosApplication.class
+com\co\libros\models\service\LibroListaLibrosImpl.class
