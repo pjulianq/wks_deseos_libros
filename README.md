@@ -19,7 +19,7 @@ Docker
 
 Clona el proyecto en tú máquina local tomandolo de https://github.com/pjulianq/wks_deseos_libros.git	
 
-El repositorio consta de 5 microservicios:
+El repositorio consta de 5 microservicios, para la puesta en marcha de la versión 1 requerimos eureka y web_lista_deseos.
 
 web_lista_deseos: Contiene el front de la aplicación y cliente rest para comunicarse con los demás microservicios.
 
@@ -68,8 +68,6 @@ cd <directorio_workspace>\wks_deseos_libros-main\web_lista_deseos
 .\mvnw clean package -DskipTests
 docker build -t web_lista_deseos:v1 .
 docker run -p 8001:8001 --name web_lista_deseos --network networklibrary web_lista_deseos:v1
-
-Nota: con éstos dos servicios funciona la aplicación, aunque la lógica de usuarios y libros está desacoplada en microservicios tengo un problema dockerizandolos que actualmente está en revisión.
 
 Creamos base datos en docker
 
